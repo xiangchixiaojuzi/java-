@@ -1,17 +1,17 @@
 1.编写Application程序接受用户输入的1~12之间的整数,如果不满足条件,则要求用户重新输入,并且输出该数字所对应月份的天数.
 public class T1
 {
-  public static void main(String args[])
-  {
-		int a;
-		Scanner in;
-		in = new Scanner(System.in);
-    System.out.println("输入的1~12之间的整数");
-		a = in.nextInt();
-		while(true)
-		{
-			
-		}
+	public static void main(String args[])
+	{
+	int a;
+	Scanner in;
+	in = new Scanner(System.in);
+	System.out.println("输入的1~12之间的整数");
+	a = in.nextInt();
+	while(true)
+	{
+
+	}
 	}
 }
 3．设有N个人围坐一圈并按顺时针方向从1到N编号，从第S个人开始进行1到M报数，报到第M的人，此人出圈，再从他的下一个人重新开始从1到M报数，
@@ -19,73 +19,73 @@ public class T1
 public class T3
 {
 	public static void main(String args[]) 
-			{
-					System.out.println("请输入人数N，开始位置S和报数人数M");
-					Scanner in;
-					in = new Scanner(System.in);
-					int S, M, N, i = 0, j = 0, id;
-					N = in.nextInt();
-					S = in.nextInt();
-					M = in.nextInt();
+	{
+		System.out.println("请输入人数N，开始位置S和报数人数M");
+		Scanner in;
+		in = new Scanner(System.in);
+		int S, M, N, i = 0, j = 0, id;
+		N = in.nextInt();
+		S = in.nextInt();
+		M = in.nextInt();
 
-					int[] man, a;
-					a = new int[N];
-					man = new int[N];
-					for (int k = 0; k < N; k++) 
-					{
-							man[k] = k + 1;
-					}
-					for (; i < N - 1; i++, j++) 
-					{
-							id = S;
-							if (man[id - 1] == 0)
-							{
-									id += 1;
-							}
-							if (id > N) 
-							{
-									id = id-N;
-							}
-							for (int m = 0; m < M - 1;) 
-							{
-									if (man[id - 1] != 0) 
-									{
-											m++;
-									}
-									id++;
-									if (id > N) 
-									{
-											id = id-N;
-									}   
-							}
-							while(man[id - 1] == 0)
-							{
-									id++;
-									if (id > N) 
-									{
-											id = id-N;
-									}
-									if(man[id-1] != 0)
-									{
-											break;
-									}
-							}
-							a[j] = man[id - 1];
-							man[id - 1] = 0;
-							S = id + 1;
-							if (S > N) 
-							{
-									S = 1;
-							}
-					}
-					for(i = 0;i<N;i++)
-					{
-							a[N-1] +=man[i]; 
-					}
-					for (int l : a) 
-					{
-							System.out.println(l);
-					}
+		int[] man, a;
+		a = new int[N];
+		man = new int[N];
+		for (int k = 0; k < N; k++) 
+		{
+			man[k] = k + 1;
+		}
+		for (; i < N - 1; i++, j++) 
+		{
+			id = S;
+			if (man[id - 1] == 0)
+			{
+				id += 1;
 			}
+			if (id > N) 
+			{
+				id = id-N;
+			}
+			for (int m = 0; m < M - 1;) 
+			{
+				if (man[id - 1] != 0) 
+				{
+						m++;
+				}
+				id++;
+				if (id > N) 
+				{
+						id = id-N;
+				}   
+			}
+			while(man[id - 1] == 0)
+			{
+				id++;
+				if (id > N) 
+				{
+						id = id-N;
+				}
+				if(man[id-1] != 0)
+				{
+						break;
+				}
+			}
+			a[j] = man[id - 1];
+			man[id - 1] = 0;
+			S = id + 1;
+			if (S > N) 
+			{
+					S = 1;
+			}
+		}
+		for(i = 0;i<N;i++)
+		{
+			a[N-1] +=man[i]; 
+		}
+		for (int l : a) 
+		{
+			System.out.println(l);
+		}
+	}
 }
 4．编写程序接受用户输入的20个数，存放在数组中，并打印输出该数组各元素的平方、求这20个数的和值以及平均值
